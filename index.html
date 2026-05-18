@@ -5,15 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>qleads.ai — Quality Leads for Real Buyers</title>
   <meta name="description" content="Free AI property advice for buyers. Exclusive qualified leads for UAE brokers. qleads.ai — Quality leads for real buyers." />
-  <meta property="og:title" content="qleads.ai — Quality Leads for Real Buyers" />
-  <meta property="og:description" content="Free honest property advice for buyers. Exclusive qualified leads for UAE brokers." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://qleads.ai" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <style>
-    /* ─── TOKENS ──────────────────────────────────── */
+    /* ── TOKENS ─────────────────────────────────── */
     :root {
       --navy:    #07101D;
       --navy2:   #0B172A;
@@ -21,7 +17,6 @@
       --navy4:   #152540;
       --gold:    #C9A84C;
       --gold2:   #E2C06A;
-      --gold3:   #F5E4B0;
       --white:   #FFFFFF;
       --cream:   #EDE8E0;
       --grey:    #7A90AA;
@@ -42,209 +37,184 @@
       overflow-x: hidden;
     }
 
-    /* ─── NAV ─────────────────────────────────────── */
+    /* ── NAV ──────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 300;
       padding: 16px 52px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(7,16,29,0.9);
+      background: rgba(7,16,29,0.96);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--faint);
     }
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-weight: 600; letter-spacing: .02em;
-      color: var(--white); text-decoration: none;
-    }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: .02em; color: var(--white); text-decoration: none; }
     .logo span { color: var(--gold); }
     .nav-links { display: flex; gap: 34px; list-style: none; }
-    .nav-links a {
-      font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--grey); text-decoration: none; transition: color .2s; font-weight: 400;
-    }
+    .nav-links a { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color .2s; font-weight: 400; }
     .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      font-size: 12px; font-weight: 500; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--gold);
-      border: 1px solid var(--gold); padding: 9px 22px;
-      text-decoration: none; transition: all .22s;
-    }
+    .nav-cta { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 9px 22px; text-decoration: none; transition: all .22s; }
     .nav-cta:hover { background: var(--gold); color: var(--navy); }
 
-    /* ─── SHARED ──────────────────────────────────── */
+    /* ── SHARED ───────────────────────────────── */
     .sec { padding: 108px 52px; }
     .sec-alt { background: var(--navy2); }
-    .eyebrow {
-      font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--gold); font-weight: 500;
-      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
-    }
+    .eyebrow { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 500; display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
     .eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--gold); flex-shrink: 0; }
-    .hed {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(38px, 5.2vw, 68px);
-      font-weight: 500; line-height: 1.06;
-      color: var(--white); letter-spacing: -.01em; margin-bottom: 20px;
-    }
+    .hed { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5.2vw, 68px); font-weight: 500; line-height: 1.06; color: var(--white); letter-spacing: -.01em; margin-bottom: 20px; }
     .hed em { font-style: italic; color: var(--gold); }
     .dek { font-size: 15.5px; color: var(--grey); max-width: 480px; line-height: 1.8; font-weight: 300; }
     .rule { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-
-    /* ─── BUTTONS ─────────────────────────────────── */
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 7px;
-      font-size: 13px; font-weight: 400; letter-spacing: .06em;
-      color: var(--cream); text-decoration: none; transition: color .2s;
-    }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 400; letter-spacing: .06em; color: var(--cream); text-decoration: none; transition: color .2s; }
     .btn-ghost::after { content: '→'; transition: transform .2s; }
     .btn-ghost:hover { color: var(--gold); }
     .btn-ghost:hover::after { transform: translateX(4px); }
-    .btn-wa {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: #25D366; color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px; font-weight: 500; letter-spacing: .08em;
-      text-transform: uppercase; padding: 15px 32px;
-      text-decoration: none; transition: all .22s;
-    }
+    .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; padding: 15px 32px; text-decoration: none; transition: all .22s; border: none; cursor: pointer; }
     .btn-wa:hover { background: #1EBF5C; transform: translateY(-1px); }
     .btn-wa svg { width: 16px; height: 16px; flex-shrink: 0; }
-    .btn-outline-gold {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 400; letter-spacing: .06em;
-      color: var(--gold); text-decoration: none; transition: color .2s;
-    }
+    .btn-outline-gold { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 400; letter-spacing: .06em; color: var(--gold); text-decoration: none; transition: all .2s; }
     .btn-outline-gold::after { content: '→'; transition: transform .2s; }
     .btn-outline-gold:hover::after { transform: translateX(4px); }
 
-    /* ─── HERO ────────────────────────────────────── */
+    /* ── HERO — Pure CSS Glass & Steel Visual ─── */
     .hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 0 52px 80px;
+      padding: 0 52px 90px;
       position: relative; overflow: hidden;
+      background: var(--navy);
     }
-    /* Architectural background image */
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('hero.jpg');
-      background-size: cover; background-position: center;
-    }
-    /* Multi-layer overlay: dark at bottom for text, gold tint overall */
-    .hero-bg::after {
+
+    /* Glass panel grid — architectural detail */
+    .hero::before {
       content: '';
       position: absolute; inset: 0;
       background:
-        linear-gradient(to top, rgba(7,16,29,0.98) 0%, rgba(7,16,29,0.75) 40%, rgba(7,16,29,0.45) 70%, rgba(7,16,29,0.55) 100%),
-        linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+        linear-gradient(rgba(201,168,76,0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.25) 1px, transparent 1px);
+      background-size: 80px 80px;
+      background-position: -1px -1px;
+      z-index: 1;
     }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 900px;
+
+    /* Diagonal steel beams */
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(135deg, transparent 30%, rgba(201,168,76,0.09) 30%, rgba(201,168,76,0.09) 31%, transparent 31%),
+        linear-gradient(135deg, transparent 55%, rgba(201,168,76,0.07) 55%, rgba(201,168,76,0.07) 56%, transparent 56%),
+        linear-gradient(135deg, transparent 75%, rgba(201,168,76,0.05) 75%, rgba(201,168,76,0.05) 76%, transparent 76%),
+        linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.04) 20%, rgba(255,255,255,0.04) 21%, transparent 21%),
+        linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.03) 51%, transparent 51%),
+        radial-gradient(ellipse at 75% 30%, rgba(201,168,76,0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 25% 70%, rgba(21,37,64,0.8) 0%, transparent 55%);
     }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(201,168,76,.1);
-      border: 1px solid var(--gborder);
-      padding: 8px 16px; margin-bottom: 32px;
-      font-size: 12px; color: var(--gold); letter-spacing: .08em;
+
+    /* Glass panel overlays — large architectural panels */
+    .hero-panels {
+      position: absolute; inset: 0; overflow: hidden; z-index: 1;
     }
-    .hero-pill::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold); animation: pulse 2.2s infinite;
+    .hero-panels::before {
+      content: '';
+      position: absolute;
+      top: -10%; right: 5%; width: 35%; height: 130%;
+      background: linear-gradient(160deg,
+        rgba(201,168,76,0.32) 0%,
+        rgba(201,168,76,0.15) 40%,
+        rgba(255,255,255,0.06) 60%,
+        transparent 100%);
+      border-left: 2px solid rgba(201,168,76,0.55);
+      transform: skewX(-8deg);
     }
+    .hero-panels::after {
+      content: '';
+      position: absolute;
+      top: -10%; right: 22%; width: 18%; height: 130%;
+      background: linear-gradient(160deg,
+        rgba(255,255,255,0.06) 0%,
+        rgba(201,168,76,0.09) 50%,
+        transparent 100%);
+      border-left: 1px solid rgba(255,255,255,0.15);
+      border-right: 1px solid rgba(201,168,76,0.25);
+      transform: skewX(-8deg);
+    }
+
+    /* Bottom gradient for text readability */
+    .hero-grad {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to top,
+        rgba(7,16,29,1) 0%,
+        rgba(7,16,29,0.85) 35%,
+        rgba(7,16,29,0.35) 65%,
+        rgba(7,16,29,0.15) 100%);
+    }
+    /* Horizontal accent lines */
+    .hero-hlines {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to bottom,
+          transparent calc(20% - 0.5px), rgba(201,168,76,0.12) calc(20%), transparent calc(20% + 0.5px),
+          transparent calc(40% - 0.5px), rgba(201,168,76,0.08) calc(40%), transparent calc(40% + 0.5px),
+          transparent calc(60% - 0.5px), rgba(201,168,76,0.06) calc(60%), transparent calc(60% + 0.5px)
+        );
+    }
+
+    /* Right side vertical accent lines */
+    .hero-lines {
+      position: absolute; top: 0; right: 8%; bottom: 0;
+      display: flex; gap: 28px; align-items: stretch;
+    }
+    .hero-line {
+      width: 1px;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(201,168,76,0.7) 20%,
+        rgba(201,168,76,0.45) 60%,
+        transparent 100%);
+    }
+
+    .hero-content { position: relative; z-index: 3; max-width: 860px; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,.1); border: 1px solid var(--gborder); padding: 8px 16px; margin-bottom: 32px; font-size: 12px; color: var(--gold); letter-spacing: .08em; }
+    .hero-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2.2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.25;} }
     .hero .hed { max-width: 760px; margin-bottom: 24px; font-size: clamp(44px,5.5vw,76px); }
-    .hero .dek { margin-bottom: 48px; color: rgba(237,232,224,0.78); }
+    .hero .dek { margin-bottom: 48px; color: rgba(237,232,224,0.82); }
     .hero-btns { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-    /* Scroll hint */
-    .hero-scroll {
-      position: absolute; bottom: 32px; right: 52px; z-index: 2;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--grey2);
-    }
-    .hero-scroll-line {
-      width: 1px; height: 48px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scrollline 2s ease-in-out infinite;
-    }
-    @keyframes scrollline { 0%,100%{opacity:.4;} 50%{opacity:1;} }
+    .hero-scroll { position: absolute; bottom: 32px; right: 52px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--grey2); }
+    .hero-scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, var(--gold), transparent); animation: sl 2s ease-in-out infinite; }
+    @keyframes sl { 0%,100%{opacity:.4;} 50%{opacity:1;} }
 
-    /* ─── BUYERS ──────────────────────────────────── */
-    .buyers-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px; margin-top: 60px; align-items: start;
-    }
+    /* ── BUYERS ───────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 60px; align-items: start; }
     .benefit-list { list-style: none; display: flex; flex-direction: column; }
-    .benefit-item {
-      display: flex; gap: 20px; align-items: flex-start;
-      padding: 24px 0; border-bottom: 1px solid var(--faint);
-    }
+    .benefit-item { display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid var(--faint); }
     .benefit-item:first-child { padding-top: 0; }
     .benefit-item:last-child { border-bottom: none; }
-    .bi-icon {
-      width: 42px; height: 42px; flex-shrink: 0;
-      border: 1px solid var(--gborder);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold);
-    }
+    .bi-icon { width: 42px; height: 42px; flex-shrink: 0; border: 1px solid var(--gborder); display: flex; align-items: center; justify-content: center; color: var(--gold); }
     .bi-text h4 { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 5px; line-height: 1.35; }
     .bi-text p { font-size: 13.5px; color: var(--grey); line-height: 1.7; }
-
-    /* Chat Card */
     .chat-card { border: 1px solid var(--gborder); background: var(--navy3); overflow: hidden; position: sticky; top: 100px; }
-    .chat-top {
-      background: var(--navy2); padding: 15px 20px;
-      border-bottom: 1px solid var(--faint);
-      display: flex; align-items: center; gap: 12px;
-    }
-    .chat-av {
-      width: 38px; height: 38px; border-radius: 50%;
-      background: var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px; font-weight: 700; color: var(--navy); flex-shrink: 0;
-    }
+    .chat-top { background: var(--navy2); padding: 15px 20px; border-bottom: 1px solid var(--faint); display: flex; align-items: center; gap: 12px; }
+    .chat-av { width: 38px; height: 38px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: var(--navy); flex-shrink: 0; }
     .chat-name { font-size: 14px; font-weight: 500; color: var(--white); }
     .chat-status { font-size: 11px; color: var(--green); }
     .chat-msgs { padding: 22px 18px; display: flex; flex-direction: column; gap: 14px; }
-    .msg { max-width: 90%; padding: 12px 15px; font-size: 13px; line-height: 1.65; border-radius: 1px; }
+    .msg { max-width: 90%; padding: 12px 15px; font-size: 13px; line-height: 1.65; }
     .msg-a { background: var(--navy2); color: var(--cream); align-self: flex-start; border-left: 2px solid var(--gold); }
     .msg-b { background: var(--gfaint); color: var(--cream); align-self: flex-end; border: 1px solid var(--gborder); }
     .msg-t { font-size: 10px; color: var(--grey2); margin-top: 3px; letter-spacing: .04em; }
     .chat-foot { border-top: 1px solid var(--faint); padding: 14px 20px; text-align: center; font-size: 12px; color: var(--grey); }
     .chat-foot a { color: var(--gold); text-decoration: none; }
-    .chat-foot a:hover { text-decoration: underline; }
 
-    /* ─── BROKERS ─────────────────────────────────── */
-    .brokers-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; margin-top: 60px; align-items: start;
-    }
+    /* ── BROKERS ──────────────────────────────── */
+    .brokers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; align-items: start; }
     .broker-list { list-style: none; display: flex; flex-direction: column; }
-    .broker-item {
-      display: flex; gap: 22px; align-items: flex-start;
-      padding: 28px 0; border-bottom: 1px solid var(--faint);
-    }
+    .broker-item { display: flex; gap: 22px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--faint); }
     .broker-item:first-child { padding-top: 0; }
     .broker-item:last-child { border-bottom: none; }
-    .b-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px; color: var(--gold); font-weight: 500;
-      letter-spacing: .14em; min-width: 22px; padding-top: 2px;
-    }
+    .b-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); font-weight: 500; letter-spacing: .14em; min-width: 22px; padding-top: 2px; }
     .b-text h4 { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 6px; line-height: 1.4; }
     .b-text p { font-size: 13.5px; color: var(--grey); line-height: 1.7; }
-
-    /* Trial Card */
-    .trial-card {
-      background: var(--navy3);
-      border: 1px solid var(--gborder);
-      padding: 44px 38px;
-      position: sticky; top: 100px;
-      box-shadow: 0 0 60px rgba(201,168,76,0.06);
-    }
+    .trial-card { background: var(--navy3); border: 1px solid var(--gborder); padding: 44px 38px; position: sticky; top: 100px; box-shadow: 0 0 60px rgba(201,168,76,0.06); }
     .trial-bar { width: 48px; height: 2px; background: var(--gold); margin-bottom: 30px; }
     .trial-price-row { display: flex; align-items: flex-start; gap: 4px; margin-bottom: 6px; }
     .trial-cur { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--gold); padding-top: 12px; }
@@ -259,57 +229,161 @@
     .trial-free strong { color: var(--cream); font-weight: 400; }
     .trial-note { font-size: 11px; color: var(--grey2); text-align: center; margin-top: 14px; letter-spacing: .04em; }
 
-    /* ─── STEPS ───────────────────────────────────── */
+    /* ── STEPS ────────────────────────────────── */
     .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 60px; }
-    .step-box {
-      background: var(--navy); padding: 40px 28px;
-      border-top: 2px solid transparent; transition: all .3s;
-      cursor: default;
-    }
+    .step-box { background: var(--navy); padding: 40px 28px; border-top: 2px solid transparent; transition: all .3s; }
     .step-box:hover { border-top-color: var(--gold); background: var(--navy3); }
-    .step-icon {
-      width: 52px; height: 52px; margin-bottom: 24px;
-      border: 1px solid var(--gborder);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold); transition: all .3s;
-    }
+    .step-icon { width: 52px; height: 52px; margin-bottom: 24px; border: 1px solid var(--gborder); display: flex; align-items: center; justify-content: center; color: var(--gold); transition: all .3s; }
     .step-box:hover .step-icon { background: var(--gfaint); }
     .step-icon svg { width: 22px; height: 22px; }
+    .step-n-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
     .step-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
     .step-box p { font-size: 13px; color: var(--grey); line-height: 1.7; }
-    .step-n-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
 
-    /* ─── FINAL CTA ───────────────────────────────── */
+    /* ── FINAL CTA — CSS Dubai Skyline ───────── */
     .finalcta {
       padding: 130px 52px;
       text-align: center;
       position: relative; overflow: hidden;
+      background: var(--navy);
     }
-    /* Dubai skyline background */
-    .finalcta-bg {
-      position: absolute; inset: 0;
-      background-image: url('dubai.jpg');
-      background-size: cover; background-position: center 60%;
-    }
-    .finalcta-bg::after {
+
+    /* Night sky gradient */
+    .finalcta::before {
       content: '';
       position: absolute; inset: 0;
       background:
-        rgba(7,16,29,0.88),
-        linear-gradient(to bottom, rgba(7,16,29,0.7) 0%, rgba(7,16,29,0.92) 100%);
+        radial-gradient(ellipse at 20% 50%, rgba(21,37,64,0.9) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(21,37,64,0.9) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 50%),
+        linear-gradient(to bottom, rgba(7,16,29,0.6) 0%, rgba(7,16,29,0.85) 60%, rgba(7,16,29,0.98) 100%);
     }
+
+    /* CSS Skyline silhouette */
+    .skyline {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 260px;
+      overflow: hidden;
+    }
+    .skyline::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 260px;
+      background: #243d5c;
+      /* Buildings using clip-path */
+      clip-path: polygon(
+        0% 100%,
+        0% 75%,
+        2% 75%, 2% 55%, 3% 55%, 3% 75%, 4% 75%,
+        4% 80%,
+        5% 80%, 5% 45%, 6.5% 45%, 6.5% 80%, 7% 80%,
+        7% 70%,
+        8% 70%, 8% 38%, 8.5% 35%, 9% 38%, 9% 70%, 10% 70%,
+        10% 75%,
+        11% 75%, 11% 50%, 12.5% 50%, 12.5% 75%, 13% 75%,
+        13% 65%,
+        14% 65%, 14% 42%, 15% 42%, 15% 65%, 16% 65%,
+        16% 72%,
+        17% 72%, 17% 30%, 17.5% 28%, 18% 30%, 18% 72%, 19% 72%,
+        19% 68%,
+        20% 68%, 20% 52%, 21% 52%, 21% 68%, 22% 68%,
+        22% 60%,
+        23% 60%, 23% 35%, 24% 35%, 24% 60%, 25% 60%,
+        25% 70%,
+        26% 70%, 26% 48%, 26.5% 46%, 27% 48%, 27% 70%, 28% 70%,
+        28% 65%,
+        29% 65%, 29% 40%, 30.5% 40%, 30.5% 65%, 31% 65%,
+        31% 72%,
+        32% 72%, 32% 25%, 32.5% 22%, 33% 25%, 33% 72%, 34% 72%,
+        34% 68%,
+        35% 68%, 35% 45%, 36% 45%, 36% 68%, 37% 68%,
+        37% 75%,
+        38% 75%, 38% 55%, 39% 55%, 39% 75%, 40% 75%,
+        40% 62%,
+        41% 62%, 41% 32%, 41.5% 29%, 42% 32%, 42% 62%, 43% 62%,
+        43% 70%,
+        44% 70%, 44% 48%, 45% 48%, 45% 70%, 46% 70%,
+        46% 65%,
+        47% 65%, 47% 42%, 48% 42%, 48% 65%, 49% 65%,
+        49% 55%,
+        50% 55%, 50% 20%, 50.5% 16%, 51% 20%, 51% 55%, 52% 55%,
+        52% 65%,
+        53% 65%, 53% 42%, 54% 42%, 54% 65%, 55% 65%,
+        55% 70%,
+        56% 70%, 56% 48%, 57% 48%, 57% 70%, 58% 70%,
+        58% 60%,
+        59% 60%, 59% 35%, 60.5% 35%, 60.5% 60%, 61% 60%,
+        61% 68%,
+        62% 68%, 62% 30%, 62.5% 27%, 63% 30%, 63% 68%, 64% 68%,
+        64% 72%,
+        65% 72%, 65% 50%, 66% 50%, 66% 72%, 67% 72%,
+        67% 65%,
+        68% 65%, 68% 40%, 69% 40%, 69% 65%, 70% 65%,
+        70% 75%,
+        71% 75%, 71% 52%, 72% 52%, 72% 75%, 73% 75%,
+        73% 68%,
+        74% 68%, 74% 33%, 74.5% 30%, 75% 33%, 75% 68%, 76% 68%,
+        76% 62%,
+        77% 62%, 77% 45%, 78% 45%, 78% 62%, 79% 62%,
+        79% 70%,
+        80% 70%, 80% 48%, 81% 48%, 81% 70%, 82% 70%,
+        82% 65%,
+        83% 65%, 83% 38%, 83.5% 35%, 84% 38%, 84% 65%, 85% 65%,
+        85% 72%,
+        86% 72%, 86% 55%, 87% 55%, 87% 72%, 88% 72%,
+        88% 78%,
+        89% 78%, 89% 60%, 90% 60%, 90% 78%, 91% 78%,
+        91% 70%,
+        92% 70%, 92% 42%, 93% 42%, 93% 70%, 94% 70%,
+        94% 75%,
+        95% 75%, 95% 55%, 96% 55%, 96% 75%, 97% 75%,
+        97% 80%,
+        98% 80%, 98% 62%, 99% 62%, 99% 80%,
+        100% 80%, 100% 100%
+      );
+      opacity: 0.7;
+    }
+
+    /* Skyline window lights */
+    .skyline::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 260px;
+      background-image:
+        radial-gradient(1px 1px at 17.5% 35%, rgba(201,168,76,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 32.5% 28%, rgba(201,168,76,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 41.5% 34%, rgba(201,168,76,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50.5% 22%, rgba(255,220,120,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 62.5% 33%, rgba(201,168,76,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 74.5% 36%, rgba(201,168,76,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 83.5% 41%, rgba(201,168,76,0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 8.5% 42%, rgba(255,200,100,0.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 27% 55%, rgba(255,200,100,0.35) 0%, transparent 100%),
+        radial-gradient(2px 2px at 50.5% 40%, rgba(255,220,120,0.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 63% 48%, rgba(255,200,100,0.35) 0%, transparent 100%),
+        radial-gradient(2px 2px at 75% 50%, rgba(255,200,100,0.35) 0%, transparent 100%);
+    }
+
+    /* City glow reflection at horizon */
+    .skyline-glow {
+      position: absolute;
+      bottom: 220px; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to top,
+        rgba(201,168,76,0.40) 0%,
+        rgba(201,168,76,0.18) 50%,
+        transparent 100%);
+    }
+
     .finalcta-content { position: relative; z-index: 2; }
     .finalcta .eyebrow { justify-content: center; }
     .finalcta .hed { max-width: 620px; margin: 14px auto 18px; }
     .finalcta .dek { margin: 0 auto 44px; text-align: center; max-width: 420px; }
     .finalcta-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; align-items: center; }
-    /* Gold separator line above CTA */
-    .finalcta-line {
-      width: 60px; height: 2px; background: var(--gold);
-      margin: 0 auto 32px;
-    }
+    .finalcta-line { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 32px; }
 
-    /* ─── FOOTER ──────────────────────────────────── */
+    /* ── FOOTER ───────────────────────────────── */
     footer { background: var(--navy2); border-top: 1px solid var(--faint); padding: 52px 52px 36px; }
     .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 44px; }
     .footer-brand p { font-size: 13px; color: var(--grey); max-width: 240px; line-height: 1.65; margin-top: 12px; }
@@ -317,41 +391,38 @@
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
     .footer-col a { font-size: 13px; color: var(--grey); text-decoration: none; transition: color .2s; }
     .footer-col a:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid var(--faint); padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--grey2);
-    }
+    .footer-bottom { border-top: 1px solid var(--faint); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--grey2); }
     .footer-bottom a { color: var(--grey2); text-decoration: none; font-size: 12px; transition: color .2s; }
     .footer-bottom a:hover { color: var(--gold); }
     .footer-legal { display: flex; gap: 22px; }
 
-    /* ─── RESPONSIVE ──────────────────────────────── */
+    /* ── RESPONSIVE ───────────────────────────── */
     @media (max-width: 960px) {
       nav { padding: 15px 22px; }
       .nav-links { display: none; }
       .sec { padding: 72px 22px; }
       .hero { padding: 0 22px 72px; }
-      .buyers-grid, .brokers-grid { grid-template-columns: 1fr; gap: 48px; }
+      .two-col, .brokers-grid { grid-template-columns: 1fr; gap: 48px; }
       .chat-card, .trial-card { position: static; }
       .steps-grid { grid-template-columns: 1fr 1fr; }
       footer { padding: 44px 22px 28px; }
       .footer-top { flex-direction: column; gap: 32px; }
-      .finalcta { padding: 90px 22px; }
+      .finalcta { padding: 90px 22px 320px; }
       .hero-scroll { display: none; }
+      .hero-lines { display: none; }
     }
     @media (max-width: 560px) {
       .steps-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; align-items: flex-start; }
     }
 
-    /* ─── ANIMATIONS ──────────────────────────────── */
+    /* ── ANIMATIONS ───────────────────────────── */
     @keyframes fu { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
-    .hero-pill   { animation: fu .5s ease both; animation-delay: .1s; }
-    .hero .eyebrow { animation: fu .55s ease both; animation-delay: .18s; }
-    .hero .hed   { animation: fu .6s ease both; animation-delay: .26s; }
-    .hero .dek   { animation: fu .6s ease both; animation-delay: .36s; }
-    .hero-btns   { animation: fu .6s ease both; animation-delay: .46s; }
+    .hero-pill    { animation: fu .5s ease both; animation-delay: .1s; }
+    .hero .eyebrow{ animation: fu .55s ease both; animation-delay: .18s; }
+    .hero .hed    { animation: fu .6s ease both; animation-delay: .26s; }
+    .hero .dek    { animation: fu .6s ease both; animation-delay: .36s; }
+    .hero-btns    { animation: fu .6s ease both; animation-delay: .46s; }
   </style>
 </head>
 <body>
@@ -367,19 +438,21 @@
   <a href="#brokers" class="nav-cta">For Brokers</a>
 </nav>
 
-<!-- ═══ HERO — Architectural glass & steel ════════ -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-
+  <div class="hero-panels"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-hlines"></div>
+  <div class="hero-lines">
+    <div class="hero-line"></div>
+    <div class="hero-line"></div>
+    <div class="hero-line"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-pill">Dubai's AI Property Platform</div>
     <div class="eyebrow">qleads.ai</div>
     <h1 class="hed">Quality leads<br/>for <em>real</em> buyers.</h1>
-    <p class="dek">
-      Free honest property advice for buyers.<br/>
-      Exclusive qualified leads for brokers.<br/>
-      One platform. No compromise.
-    </p>
+    <p class="dek">Free honest property advice for buyers.<br/>Exclusive qualified leads for brokers.<br/>One platform. No compromise.</p>
     <div class="hero-btns">
       <a href="https://wa.me/971000000000?text=Hi+AISHA%2C+I+am+looking+for+property+in+Dubai" class="btn-wa" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -388,7 +461,6 @@
       <a href="#brokers" class="btn-ghost">I am a broker</a>
     </div>
   </div>
-
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
     <span>Scroll</span>
@@ -397,69 +469,38 @@
 
 <div class="rule"></div>
 
-<!-- ═══ BUYERS ════════════════════════════════════ -->
+<!-- BUYERS -->
 <section class="sec sec-alt" id="buyers">
   <div class="eyebrow">For Property Buyers</div>
   <h2 class="hed">Honest advice.<br/><em>Zero cost.</em><br/>Zero pressure.</h2>
   <p class="dek">AISHA is your free AI property advisor on WhatsApp. No agent pressure. No hidden agenda. Just the truth about every property — good and bad.</p>
-
-  <div class="buyers-grid">
+  <div class="two-col">
     <ul class="benefit-list">
       <li class="benefit-item">
-        <div class="bi-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-        </div>
-        <div class="bi-text">
-          <h4>Completely Free — Always</h4>
-          <p>AISHA never charges buyers. No registration. No app. No website visit. Just message on WhatsApp and start immediately.</p>
-        </div>
+        <div class="bi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div>
+        <div class="bi-text"><h4>Completely Free — Always</h4><p>AISHA never charges buyers. No registration. No app. No website to visit. Just message on WhatsApp and start immediately.</p></div>
       </li>
       <li class="benefit-item">
-        <div class="bi-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <div class="bi-text">
-          <h4>Honest — Not a Sales Pitch</h4>
-          <p>AISHA tells you what is good AND what is wrong about any property or area. She has no commission motive. No broker will ever do this.</p>
-        </div>
+        <div class="bi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="bi-text"><h4>Honest — Not a Sales Pitch</h4><p>AISHA tells you what is good AND what is wrong about any property or area. She has no commission motive. No broker will ever do this.</p></div>
       </li>
       <li class="benefit-item">
-        <div class="bi-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-        </div>
-        <div class="bi-text">
-          <h4>DLD Verified Properties Only</h4>
-          <p>Every recommendation is verified with Dubai Land Department. No unregistered projects. No misleading listings. Ever.</p>
-        </div>
+        <div class="bi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <div class="bi-text"><h4>DLD Verified Properties Only</h4><p>Every recommendation is verified with Dubai Land Department. No unregistered projects. No misleading listings. Ever.</p></div>
       </li>
       <li class="benefit-item">
-        <div class="bi-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        </div>
-        <div class="bi-text">
-          <h4>Golden Visa Guidance</h4>
-          <p>Investing AED 2M or more? AISHA explains how your purchase qualifies you for UAE 10-year Golden Visa residency — step by step.</p>
-        </div>
+        <div class="bi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+        <div class="bi-text"><h4>Golden Visa Guidance</h4><p>Investing AED 2M or more? AISHA explains how your purchase qualifies you for UAE 10-year Golden Visa residency — step by step.</p></div>
       </li>
       <li class="benefit-item">
-        <div class="bi-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-        </div>
-        <div class="bi-text">
-          <h4>You Stay in Control</h4>
-          <p>AISHA connects you with a specialist only when you ask. No unexpected calls. No data shared without your explicit permission.</p>
-        </div>
+        <div class="bi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+        <div class="bi-text"><h4>You Stay in Control</h4><p>AISHA connects you with a specialist only when you ask. No unexpected calls. No data shared without your explicit permission.</p></div>
       </li>
     </ul>
-
-    <!-- AISHA CHAT CARD -->
     <div class="chat-card">
       <div class="chat-top">
         <div class="chat-av">A</div>
-        <div>
-          <div class="chat-name">AISHA — qleads.ai</div>
-          <div class="chat-status">● Online now</div>
-        </div>
+        <div><div class="chat-name">AISHA — qleads.ai</div><div class="chat-status">● Online now</div></div>
       </div>
       <div class="chat-msgs">
         <div>
@@ -467,14 +508,7 @@
           <div class="msg-t" style="text-align:right">2:14 PM</div>
         </div>
         <div>
-          <div class="msg msg-a">
-            I already checked Marina for your budget. Honest picture:<br/><br/>
-            ✅ Rental yields: 6.8–7.4% — excellent for investment<br/>
-            ✅ Appreciation last year: +14.2%<br/>
-            ⚠️ Service charges among highest in Dubai — budget AED 15–18/sqft yearly<br/>
-            ⚠️ High supply right now — sellers are flexible, negotiate hard<br/><br/>
-            Also — at AED 1.8M you are close to the AED 2M Golden Visa threshold. Want options that give both strong yield AND 10-year UAE residency?
-          </div>
+          <div class="msg msg-a">I already checked Marina for your budget. Honest picture:<br/><br/>✅ Rental yields: 6.8–7.4% — excellent<br/>✅ Appreciation last year: +14.2%<br/>⚠️ Service charges among highest in Dubai — AED 15–18/sqft yearly<br/>⚠️ High supply right now — negotiate hard<br/><br/>At AED 1.8M you are close to the AED 2M Golden Visa threshold. Want options that give both strong yield AND 10-year UAE residency?</div>
           <div class="msg-t">2:14 PM</div>
         </div>
         <div>
@@ -482,55 +516,38 @@
           <div class="msg-t" style="text-align:right">2:15 PM</div>
         </div>
       </div>
-      <div class="chat-foot">
-        This is a real conversation. <a href="https://wa.me/971000000000?text=Hi+AISHA%2C+I+am+looking+for+property+in+Dubai" target="_blank" rel="noopener">Start yours on WhatsApp →</a>
-      </div>
+      <div class="chat-foot">This is a real conversation. <a href="https://wa.me/971000000000?text=Hi+AISHA%2C+I+am+looking+for+property+in+Dubai" target="_blank" rel="noopener">Start yours on WhatsApp →</a></div>
     </div>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- ═══ BROKERS ════════════════════════════════════ -->
+<!-- BROKERS -->
 <section class="sec" id="brokers">
   <div class="brokers-grid">
     <div>
       <div class="eyebrow">For Registered Brokers</div>
       <h2 class="hed">Stop cold calling.<br/><em>Start closing.</em></h2>
       <p class="dek">Every QLEADS buyer has had a real conversation, asked real questions, and agreed to speak with you. Your call is warm before you dial.</p>
-
       <ul class="broker-list">
         <li class="broker-item">
           <div class="b-num">01</div>
-          <div class="b-text">
-            <h4>Pre-qualified buyers — Real recorded conversations, not just filled forms</h4>
-            <p>Every buyer on qleads.ai has spoken to AISHA in a real conversation. Their intent, budget and purpose are confirmed before you make a single call.</p>
-          </div>
+          <div class="b-text"><h4>Pre-qualified buyers — Real recorded conversations, not just filled forms</h4><p>Every buyer on qleads.ai has spoken to AISHA in a real conversation. Their intent, budget and purpose are confirmed before you make a single call.</p></div>
         </li>
         <li class="broker-item">
           <div class="b-num">02</div>
-          <div class="b-text">
-            <h4>Exclusive — your lead, not shared with anyone</h4>
-            <p>Every lead belongs to one broker only. We never send the same buyer to two brokers. No race to call first. No competing with other agents.</p>
-          </div>
+          <div class="b-text"><h4>Exclusive — your lead, not shared with anyone</h4><p>Every lead belongs to one broker only. We never send the same buyer to two brokers. No race to call first. No competing with other agents.</p></div>
         </li>
         <li class="broker-item">
           <div class="b-num">03</div>
-          <div class="b-text">
-            <h4>When you get a Q Lead — the buyer is expecting your call</h4>
-            <p>The buyer has given consent and is waiting to hear from you. You are not cold calling a stranger. You are following up a conversation they already had.</p>
-          </div>
+          <div class="b-text"><h4>When you get a Q Lead — the buyer is expecting your call</h4><p>The buyer has given consent and is waiting to hear from you. You are not cold calling a stranger. You are following up a conversation they already had.</p></div>
         </li>
       </ul>
     </div>
-
-    <!-- TRIAL CARD -->
     <div class="trial-card">
       <div class="trial-bar"></div>
-      <div class="trial-price-row">
-        <span class="trial-cur">AED</span>
-        <span class="trial-amt">500</span>
-      </div>
+      <div class="trial-price-row"><span class="trial-cur">AED</span><span class="trial-amt">500</span></div>
       <div class="trial-per">Per qualified lead + 5% VAT</div>
       <ul class="trial-items">
         <li>Buyer qualified through real AI conversation</li>
@@ -554,48 +571,32 @@
 
 <div class="rule"></div>
 
-<!-- ═══ HOW TO START — with SVG icons ═══════════ -->
+<!-- HOW TO START -->
 <section class="sec sec-alt" id="start">
   <div class="eyebrow">Getting Started</div>
   <h2 class="hed">Up and running<br/>in <em>minutes.</em></h2>
-
   <div class="steps-grid">
     <div class="step-box">
       <div class="step-n-label">Step 01</div>
-      <div class="step-icon">
-        <!-- WhatsApp icon -->
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </div>
+      <div class="step-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
       <h4>Message us on WhatsApp</h4>
       <p>Tell us your name and the areas you work in. Nothing else needed to start. No forms. No website.</p>
     </div>
-
     <div class="step-box">
       <div class="step-n-label">Step 02</div>
-      <div class="step-icon">
-        <!-- Document / preview icon -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-      </div>
+      <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
       <h4>See what you will receive</h4>
       <p>We show you exactly what a Q Lead looks like — before you commit to anything whatsoever.</p>
     </div>
-
     <div class="step-box">
       <div class="step-n-label">Step 03</div>
-      <div class="step-icon">
-        <!-- Star / quality icon -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
-      </div>
+      <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div>
       <h4>Get your first free lead</h4>
       <p>A real qualified buyer in your locality. No payment. No card required. Take your time with it.</p>
     </div>
-
     <div class="step-box">
       <div class="step-n-label">Step 04</div>
-      <div class="step-icon">
-        <!-- Wallet / activate icon -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-      </div>
+      <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div>
       <h4>Decide when you are ready</h4>
       <p>After your 2 free leads — activate your wallet and receive paid leads whenever you want more.</p>
     </div>
@@ -604,9 +605,11 @@
 
 <div class="rule"></div>
 
-<!-- ═══ FINAL CTA — Dubai skyline background ═══ -->
+<!-- FINAL CTA -->
 <section class="finalcta">
-  <div class="finalcta-bg"></div>
+  <div class="skyline">
+    <div class="skyline-glow"></div>
+  </div>
   <div class="finalcta-content">
     <div class="eyebrow">Get Started Today</div>
     <div class="finalcta-line"></div>
@@ -648,16 +651,16 @@
     <div class="footer-col">
       <h5>Legal</h5>
       <ul>
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 qleads.ai — ME Universal IoT Technologies, Dubai, UAE</p>
     <div class="footer-legal">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
   </div>
 </footer>
