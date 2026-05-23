@@ -1,0 +1,3 @@
+Replace this file content with your actual Google Search Console HTML verification file.
+Steps: search.google.com/search-console → Add property → URL prefix → https://qleads.ai
+→ Verify ownership → HTML file method → Download the file → Replace this file with it → Push to GitHub

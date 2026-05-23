@@ -1,0 +1,23 @@
+{
+  "name": "qleads.ai — Dubai Property Platform",
+  "short_name": "qleads.ai",
+  "description": "Free AI property advisory for buyers. Exclusive Q-Leads for Dubai brokers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E1F3D",
+  "theme_color": "#0E1F3D",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "finance", "lifestyle"],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

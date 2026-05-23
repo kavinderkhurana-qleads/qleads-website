@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+Sitemap: https://qleads.ai/sitemap.xml
+Host: https://qleads.ai
+
+# qleads.ai — UAE AI Property Platform
+# All content is original DLD-verified data
+# Updated: 2026-05-23
